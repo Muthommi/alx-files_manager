@@ -32,7 +32,7 @@ class DBClient {
   }
 
   async nbFiles() {
-    if (!this.isalive()) return 0;
+    if (!this.isAlive()) return 0;
     const db = this.client.db(this.databaseName);
     return db.collection('files').countDocuments();
   }
