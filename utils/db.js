@@ -38,6 +38,9 @@ class DBClient {
     const db = this.client.db(this.databaseName);
     return db.collection('files').countDocuments();
   }
+  objectId(id) {
+    return new ObjectId(id);
+  }
 }
 
 const dbClient = new DBClient();
