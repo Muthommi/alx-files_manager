@@ -15,7 +15,7 @@ class DBClient {
     this.client.connect()
       .then(() => {
         this.connected = true;
-	this.db = this.client.db(this.databaseName);
+        this.db = this.client.db(this.databaseName);
         console.log('MongoDB connected successfully');
       })
       .catch((err) => {
@@ -38,7 +38,8 @@ class DBClient {
     const db = this.client.db(this.databaseName);
     return db.collection('files').countDocuments();
   }
-  objectId(id) {
+
+  static objectId(id) {
     return new ObjectId(id);
   }
 }
